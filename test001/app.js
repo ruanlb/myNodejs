@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // 加载express并创建应用
 var myExpress = require('express');
 var myApp = myExpress();
@@ -14,8 +13,3 @@ var myServer = myApp.listen(8081, function () {
     var myPort = myServer.address().port;
     console.log("应用实例，访问地址为 http://%s:%s", myHost, myPort);
 });
-=======
-do non;
-sdjfasdjf 
-asdjfa sdjfasdjf
->>>>>>> 822b751efcace890e1ccce74bc657cb686b929c3
