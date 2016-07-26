@@ -17,7 +17,7 @@ exports.callApi = function(req, res){
     }
     // 根据携带的参数调用对应的方法
     try {
-        exports.doAction(myApi, req, res);
+        myResult = exports.doAction(myApi, req, res);
     }
     catch(e) {
         myResult.code = -1002;
@@ -40,15 +40,15 @@ exports.doAction = function(iApi, req, res){
             // 单资源查询
             myResult = myApi.getOne(myId);
         }
-        else if(myAction == 'put') {
+        else if(myAction == 'PUT') {
             // 添加指定Id的资源
             myResult = myApi.add(req.body, myId);
         }
-        else if(myAction == 'Post') {
+        else if(myAction == 'POST') {
             // 修改指定Id的资源
             myResult = myApi.modify(myId);
         }
-        else if(myAction == 'delete') {
+        else if(myAction == 'DELETE') {
             // 删除指定资源
             myResult = myApi.modify(myId);
         }
@@ -59,15 +59,15 @@ exports.doAction = function(iApi, req, res){
             // 多条件查询
             myResult = myApi.getSome(req.query);
         }
-        else if(myAction == 'put') {
+        else if(myAction == 'PUT') {
             // 添加资源，由系统分配Id
             myResult = myApi.add(req.body);
         }
-        else if(myAction == 'Post') {
+        else if(myAction == 'POST') {
             // 批量修改资源
             myResult = myApi.modifySome(req.query, req.body);
         }
-        else if(myAction == 'delete') {
+        else if(myAction == 'DELETE') {
             // 批量删除资源
             myResult = myApi.deleteSome(req.query, req.body);
         }            
