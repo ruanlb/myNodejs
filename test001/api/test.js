@@ -8,9 +8,9 @@ exports.getSome = function(iResouceId) {
     myResult.data = new Array(10); // 返回数组
     for(var i = 0; i < myResult.data.length; i++)
     {
-        myResult.data[0] = new Object();
-        myResult.data[0].id = i;
-        myResult.data[0].name = '测试资源[' + i + ']';
+        myResult.data[i] = new Object();
+        myResult.data[i].id = i;
+        myResult.data[i].name = '测试资源[' + i + ']';
     }
     return myResult;
 }
